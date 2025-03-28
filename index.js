@@ -17,8 +17,8 @@
  * </ul>`
  * <li> `browser` - generate files needed for browser (browserify)
  * <ul>
- * <li> `browser:uncompressed` - build uncomprssed browser bundle (`bitcore-*.js`)
- * <li> `browser:compressed` - build compressed browser bundle (`bitcore-*.min.js`)
+ * <li> `browser:uncompressed` - build uncomprssed browser bundle (`neobytes-*.js`)
+ * <li> `browser:compressed` - build compressed browser bundle (`neobytes-*.min.js`)
  * <li> `browser:maketests` - build `tests.js`, needed for testing without karma
  * </ul>`
  * <li> `lint` - run `jshint`
@@ -32,7 +32,7 @@
 var gulp = require('gulp');
 
 var coveralls = require('gulp-coveralls');
-var fancyLog = require('fancy-log');
+var gutil = require('gulp-util');
 var jshint = require('gulp-jshint');
 var mocha = require('gulp-mocha');
 var rename = require('gulp-rename');
@@ -54,7 +54,7 @@ function startGulp(name, opts) {
 
   opts = opts || {};
   var browser = !opts.skipBrowser;
-  var fullname = name ? 'bitcore-' + name : 'bitcore';
+  var fullname = name ? 'neobytes-' + name : 'bitcore';
   var files = ['lib/**/*.js'];
   var tests = ['test/**/*.js'];
   var alljs = files.concat(tests);
@@ -146,7 +146,7 @@ function startGulp(name, opts) {
         }))
         .pipe(rename(fullname + '.min.js'))
         .pipe(gulp.dest('.'))
-        .on('error', fancyLog);
+        .on('error', gutil.log));
     });
 
     gulp.task('browser:maketests', shell.task([
