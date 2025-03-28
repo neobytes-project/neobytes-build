@@ -1,7 +1,7 @@
 {
   "name": "neobytes-build",
   "version": "1.0.0",
-  "description": "A helper for common tasks to build dashcore modules",
+  "description": "A helper for common tasks to build neobytes modules",
   "main": "index.js",
   "scripts": {
     "test": "gulp test"
@@ -11,8 +11,7 @@
     "url": "git://github.com/neobytes-project/neobytes-build"
   },
   "keywords": [
-    "dash",
-    "dashcore"
+    "neobytes"
   ],
   "license": "MIT",
   "bugs": {

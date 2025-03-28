@@ -129,9 +129,9 @@ function startGulp(name, opts) {
     var browserifyCommand;
 
     if (name !== 'lib') {
-      browserifyCommand = browserifyPath + ' --require ./index.js:' + fullname + ' --external bitcore-lib-dash -o ' + fullname + '.js';
+      browserifyCommand = browserifyPath + ' --require ./index.js:' + fullname + ' --external neobytes-lib -o ' + fullname + '.js';
     } else {
-      browserifyCommand = browserifyPath + ' --require ./index.js:bitcore-lib-dash -o bitcore-lib-dash.js';
+      browserifyCommand = browserifyPath + ' --require ./index.js:neobytes-lib -o neobytes-lib.js';
     }
 
     gulp.task('browser:uncompressed', shell.task([
