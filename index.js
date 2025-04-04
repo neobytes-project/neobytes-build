@@ -146,7 +146,7 @@ function startGulp(name, opts) {
         }))
         .pipe(rename(fullname + '.min.js'))
         .pipe(gulp.dest('.'))
-        .on('error', gutil.log));
+        .on('error', gutil.log);
     });
 
     gulp.task('browser:maketests', shell.task([
