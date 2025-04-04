@@ -32,7 +32,7 @@
 var gulp = require('gulp');
 
 var coveralls = require('gulp-coveralls');
-var fancyLog = require('fancy-log');
+var gutil = require('gulp-util');
 var jshint = require('gulp-jshint');
 var mocha = require('gulp-mocha');
 var rename = require('gulp-rename');
@@ -146,7 +146,7 @@ function startGulp(name, opts) {
         }))
         .pipe(rename(fullname + '.min.js'))
         .pipe(gulp.dest('.'))
-        .on('error', fancyLog);
+        .on('error', gutil.log);
     });
 
     gulp.task('browser:maketests', shell.task([
