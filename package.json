@@ -1,5 +1,5 @@
 {
-  "name": "@neobytes/neobytes-build",
+  "name": "neobytes-build",
   "version": "0.9.0",
   "description": "A helper for common tasks to build neobytes modules",
   "main": "index.js",
